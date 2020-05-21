@@ -1,0 +1,30 @@
+<h3>Iterating over the getter</h3>
+
+<form [formGroup]="foodForm">
+	<label>Name: </label>
+	<input formControlName="foodName" />
+	<section [formGroup]="foodForm.controls.tags">
+    <ng-container *ngFor="let tag of tagsForForm | keyvalue">
+      <label>{{ tag.key | titlecase }}</label>
+      <input [formControlName]="tag.key" type="checkbox">
+      <br>
+    </ng-container>
+  </section>
+</form>
+
+<h3>Iterating over the `tags` variable</h3>
+
+<form [formGroup]="foodForm">
+	<label>Name: </label>
+	<input formControlName="foodName" />
+	<section [formGroup]="foodForm.controls.tags">
+    <ng-container *ngFor="let tag of tags">
+      <label>{{ tag | titlecase }}</label>
+      <input [formControlName]="tag" type="checkbox">
+      <br>
+    </ng-container>
+  </section>
+</form>
+
+<br>
+<pre>Form Values: {{ foodForm.value | json }}</pre>
