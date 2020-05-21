@@ -2,11 +2,13 @@
 
 <form [formGroup]="foodForm">
 	<label>Name: </label>
-	<input formControlName="foodName" />
+	<input formControlName="foodName" /><br>
 	<section [formGroup]="foodForm.controls.tags">
     <ng-container *ngFor="let tag of tagsForForm | keyvalue">
-      <label>{{ tag.key | titlecase }}</label>
-      <input [formControlName]="tag.key" type="checkbox">
+      <label>
+        <input [formControlName]="tag.key" type="checkbox">
+        {{ tag.key | titlecase }}
+      </label>
       <br>
     </ng-container>
   </section>
@@ -16,11 +18,13 @@
 
 <form [formGroup]="foodForm">
 	<label>Name: </label>
-	<input formControlName="foodName" />
+	<input formControlName="foodName" /><br>
 	<section [formGroup]="foodForm.controls.tags">
     <ng-container *ngFor="let tag of tags">
-      <label>{{ tag | titlecase }}</label>
-      <input [formControlName]="tag" type="checkbox">
+      <label>
+        <input [formControlName]="tag" type="checkbox">
+        {{ tag | titlecase }}
+      </label>
       <br>
     </ng-container>
   </section>

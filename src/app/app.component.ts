@@ -7,6 +7,7 @@ import { FormBuilder, FormGroup, Validators, FormArray, FormControl } from '@ang
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
+  public Personal: boolean = false;
   foodForm: FormGroup;
   tags = ["vegan", "vegetarian", "meat", "fruit", "vegetable", "seafood", "fish","nut"];
 
